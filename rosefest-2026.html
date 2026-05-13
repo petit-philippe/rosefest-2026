@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RoséFest 2026 | Petit Philippe Fine Wine</title>
+  <style>
+    html { scroll-behavior: smooth; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: transparent; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  </style>
+</head>
+<body>
+
+<!-- ============================================================
+     ROSEFEST 2026 — Petit Philippe Fine Wine
+     GitHub Pages hosted / iframe-embedded in Lightspeed
+
+     LINKS TO UPDATE (search by tag):
+     LINK-HERO   → Hero "Explore by Style" CTA (scrolls to #rf26-categories)
+     LINK-CARD-A → Sparkling & Spritzy PLP
+     LINK-CARD-B → Beach, Lake & Patio (confirmed URL set)
+     LINK-CARD-C → Crisp & Coastal PLP
+     LINK-CARD-D → For the Table PLP
+     LINK-CARD-E → Serious Rosé PLP
+     LINK-CARD-F → Discovery Bottles PLP
+     ============================================================ -->
+
+<div class="rf26-landing">
+<style>
+
+/* ============================================================
+   CSS VARIABLES — RoséFest 2026 Palette
+   ============================================================ */
+.rf26-landing {
+
+  /* ── Page foundation ── */
+  --c-charcoal:      #2E2B28;   /* hero background: warm charcoal */
+  --c-charcoal-mid:  #3D3A36;   /* slightly lifted charcoal for subtle use */
+  --c-ivory:         #FAF7F2;   /* page background, hero headline */
+  --c-ivory-muted:   rgba(250, 247, 242, 0.68); /* hero body text on dark */
+  --c-cream:         #F0E6DF;   /* allocation callout background */
+
+  /* ── RoséFest accent palette ── */
+  --c-coral:         #E78C7A;   /* primary CTA, card links, active accents */
+  --c-rose-deep:     #C96F63;   /* hover state, emphasis, borders */
+  --c-sage:          #859E94;   /* icon default, eyebrow labels, rules (on light bg) */
+  --c-sage-light:    #A9BDB7;   /* sage on charcoal (hero label) */
+  --c-gold:          #B89A5E;   /* champagne gold: hero rule, hairlines */
+
+  /* ── Card and surface tones ── */
+  --c-blush-petal:   #F5EDE9;   /* card background (warm, not white) */
+  --c-blush-card-hover: #EFE4DF; /* card hover */
+  --c-blush-border:  #E2CFCA;   /* card grid border and gap */
+
+  /* ── Text ── */
+  --c-text:          #2E2B28;
+  --c-mid:           #6B6561;
+  --c-light:         #9A948F;
+
+  /* ── Legacy border (allocation callout, dividers) ── */
+  --c-border:        #D8CABB;
+
+  --f-serif: Georgia, 'Times New Roman', 'Palatino Linotype', serif;
+  --f-sans:  'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+  --max-w: 1120px;
+  --pad-x: clamp(1.25rem, 5vw, 3rem);
+
+  font-family: var(--f-sans);
+  color: var(--c-text);
+  background-color: var(--c-ivory);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+.rf26-landing * { box-sizing: border-box; }
+
+/* ── Shared inner wrapper ── */
+.rf26-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding-left: var(--pad-x);
+  padding-right: var(--pad-x);
+}
+
+/* ── Eyebrow label (sage on light; overridden to sage-light in hero) ── */
+.rf26-label {
+  display: block;
+  font-family: var(--f-sans);
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-sage);
+}
+
+/* ── Outlined CTA button (base; hero overrides below) ── */
+.rf26-btn {
+  display: inline-block;
+  font-family: var(--f-sans);
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.8rem 2rem;
+  border: 1px solid currentColor;
+  transition: background 0.22s ease, color 0.22s ease, border-color 0.22s ease;
+}
+
+.rf26-btn:focus-visible { outline: 2px solid var(--c-gold); outline-offset: 3px; }
+
+/* ── Thin rule ── */
+.rf26-rule {
+  display: block;
+  width: 36px;
+  height: 1px;
+  background: var(--c-gold);
+}
+
+
+/* ============================================================
+   1. HERO — charcoal-grounded
+   ============================================================ */
+
+.rf26-hero {
+  background-color: var(--c-charcoal);
+  background-image:
+    linear-gradient(rgba(46, 43, 40, 0.70), rgba(46, 43, 40, 0.70)),
+    url('https://petit-philippe.github.io/rosefest-2026/hero.png');
+  background-size: cover;
+  background-position: center center;
+  padding: clamp(4rem, 8vw, 6.5rem) var(--pad-x);
+  text-align: center;
+  position: relative;
+}
+
+/* Gold hairlines at top and bottom of hero — inset frame */
+.rf26-hero::before,
+.rf26-hero::after {
+  content: '';
+  display: block;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(184, 154, 94, 0.12) 8%,
+    rgba(184, 154, 94, 0.65) 50%,
+    rgba(184, 154, 94, 0.12) 92%,
+    transparent
+  );
+  position: absolute;
+  left: var(--pad-x);
+  right: var(--pad-x);
+}
+.rf26-hero::before { top: 0; }
+.rf26-hero::after  { bottom: 0; }
+
+.rf26-hero__inner {
+  max-width: 620px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Override label to lighter sage on charcoal */
+.rf26-hero .rf26-label { color: var(--c-sage-light); }
+
+.rf26-hero .rf26-rule {
+  background: var(--c-gold);
+  margin-bottom: 0.125rem;
+}
+
+.rf26-hero__headline {
+  font-family: var(--f-serif);
+  font-size: clamp(2.25rem, 5.5vw, 3.75rem);
+  font-weight: normal;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--c-ivory);
+  margin-top: 0.25rem;
+}
+
+.rf26-hero__body {
+  font-size: 0.9375rem;
+  line-height: 1.8;
+  color: var(--c-ivory-muted);
+  max-width: 500px;
+  margin-top: 0.25rem;
+}
+
+/* Hero button: coral on charcoal */
+.rf26-hero .rf26-btn {
+  color: var(--c-coral);
+  border-color: var(--c-coral);
+  margin-top: 0.75rem;
+}
+
+.rf26-hero .rf26-btn:hover {
+  background: var(--c-rose-deep);
+  border-color: var(--c-rose-deep);
+  color: var(--c-ivory);
+}
+
+/* No ::after arrow — hero CTA navigates to PLP, not scroll */
+
+
+/* ============================================================
+   2. CATEGORY CARDS
+   ============================================================ */
+
+.rf26-categories {
+  padding: clamp(3rem, 6vw, 5rem) var(--pad-x);
+}
+
+.rf26-categories__header {
+  text-align: center;
+  margin-bottom: clamp(2rem, 4vw, 3.25rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+/* "Find your bottle" heading uses charcoal text on ivory background */
+.rf26-categories__header h2 {
+  font-family: var(--f-serif);
+  font-size: clamp(1.375rem, 3vw, 1.875rem);
+  font-weight: normal;
+  color: var(--c-text);
+}
+
+/* Grid: 1-col → 2-col → 3-col; gap is the blush-border color */
+.rf26-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px;
+  background: var(--c-blush-border);
+  border: 1px solid var(--c-blush-border);
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+
+@media (min-width: 600px) { .rf26-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 900px) { .rf26-grid { grid-template-columns: 1fr 1fr 1fr; } }
+
+/* ── Individual card ── */
+.rf26-card {
+  background: var(--c-blush-petal);   /* warm blush-petal, not white */
+  padding: 2.25rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  transition: background 0.2s ease;
+}
+
+.rf26-card:hover { background: var(--c-blush-card-hover); }
+
+/* ── Card icon — sage default, coral on hover ── */
+.rf26-card__icon {
+  display: block;
+  width: 44px;
+  height: 44px;
+  color: var(--c-sage);
+  margin-bottom: 1.5rem;
+  flex-shrink: 0;
+  transition: color 0.25s ease;
+}
+
+.rf26-card:hover .rf26-card__icon { color: var(--c-coral); }
+
+.rf26-card__title {
+  font-family: var(--f-serif);
+  font-size: 1.1875rem;
+  font-weight: normal;
+  color: var(--c-text);
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+
+.rf26-card__desc {
+  font-size: 0.84375rem;
+  line-height: 1.75;
+  color: var(--c-mid);
+  flex: 1;
+  margin-bottom: 1.75rem;
+}
+
+/* Text-link CTA: coral, animated arrow */
+.rf26-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--f-sans);
+  font-size: 0.59375rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--c-coral);
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease, gap 0.2s ease, color 0.2s ease;
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+.rf26-card__cta:hover,
+.rf26-card__cta:focus-visible {
+  color: var(--c-rose-deep);
+  border-bottom-color: var(--c-rose-deep);
+  gap: 0.65rem;
+}
+
+.rf26-card__cta:focus-visible { outline: 2px solid var(--c-sage); outline-offset: 3px; }
+
+.rf26-card__arrow {
+  display: inline-block;
+  font-size: 0.875rem;
+  line-height: 1;
+  letter-spacing: 0;
+  transition: transform 0.22s ease;
+}
+
+.rf26-card__cta:hover .rf26-card__arrow { transform: translateX(4px); }
+
+
+/* ============================================================
+   3. OPTIONAL LIMITED-ALLOCATION CALLOUT (text only)
+   Remove entire block (START to END comment) to hide.
+   ============================================================ */
+
+.rf26-allocation {
+  background: var(--c-cream);
+  border-top: 1px solid var(--c-blush-border);
+  border-bottom: 1px solid var(--c-blush-border);
+}
+
+.rf26-allocation .rf26-inner {
+  padding-top: clamp(2.25rem, 4.5vw, 3.25rem);
+  padding-bottom: clamp(2.25rem, 4.5vw, 3.25rem);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  max-width: 720px;
+}
+
+.rf26-allocation__title {
+  font-family: var(--f-serif);
+  font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+  font-weight: normal;
+  color: var(--c-text);
+}
+
+.rf26-allocation__body {
+  font-size: 0.875rem;
+  line-height: 1.75;
+  color: var(--c-mid);
+  max-width: 560px;
+}
+
+
+/* ============================================================
+   FOOTER ACCENT BAR
+   ============================================================ */
+
+.rf26-footer-rule {
+  display: block;
+  height: 3px;
+  background: linear-gradient(
+    to right,
+    var(--c-cream),
+    var(--c-blush-border) 20%,
+    var(--c-coral)        50%,
+    var(--c-blush-border) 80%,
+    var(--c-cream)
+  );
+}
+
+</style>
+
+
+<!-- ══════════════════════════════════════════════
+     SECTION 1: HERO (charcoal-grounded)
+     ══════════════════════════════════════════════ -->
+<section class="rf26-hero">
+  <div class="rf26-hero__inner">
+    <span class="rf26-rule"></span>
+    <span class="rf26-label">Charlotte's original rosé celebration</span>
+    <h1 class="rf26-hero__headline">
+      RoséFest 2026:<br>Shop the Summer Lineup
+    </h1>
+    <p class="rf26-hero__body">
+      The wines poured at RoséFest are gathered here for the season.
+      Revisit what you tasted, stock up on a favorite, or shop the full lineup
+      if you missed the weekend.
+    </p>
+    <a class="rf26-btn" href="https://www.petitphilippe.com/petit-picks/rosefest-2026/shop-all-rosefest/" target="_top">Shop All RoséFest Wines</a>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     SECTION 2: CATEGORY CARDS
+     ══════════════════════════════════════════════ -->
+<section class="rf26-categories" id="rf26-categories">
+
+  <div class="rf26-inner">
+    <div class="rf26-categories__header">
+      <span class="rf26-label">Shop by Style</span>
+      <h2>Find your bottle</h2>
+    </div>
+  </div>
+
+  <div class="rf26-inner">
+    <div class="rf26-grid">
+
+
+      <!-- ─────────────────────────────────────────────
+           CARD A: SPARKLING & SPRITZY
+           LINK-CARD-A: replace # with Lightspeed URL
+           ───────────────────────────────────────────── -->
+      <div class="rf26-card">
+
+        <!-- Champagne flute with three rising bubble dots -->
+        <svg class="rf26-card__icon" viewBox="0 0 48 48" fill="none"
+             stroke="currentColor" stroke-width="1.3"
+             stroke-linecap="round" stroke-linejoin="round"
+             aria-hidden="true" focusable="false">
+          <path d="M17 8 C16 15 19 21 24 24"/>
+          <path d="M31 8 C32 15 29 21 24 24"/>
+          <line x1="17" y1="8" x2="31" y2="8"/>
+          <line x1="24" y1="24" x2="24" y2="38"/>
+          <line x1="18" y1="38" x2="30" y2="38"/>
+          <circle cx="21.5" cy="18" r="1.6" fill="currentColor" stroke="none"/>
+          <circle cx="24"   cy="13" r="1.6" fill="currentColor" stroke="none"/>
+          <circle cx="26.5" cy="18" r="1.6" fill="currentColor" stroke="none"/>
+        </svg>
+
+        <h3 class="rf26-card__title">Sparkling &amp; Spritzy</h3>
+        <p class="rf26-card__desc">
+          From a naturally lively pét-nat to a traditional-method Crémant aged
+          18 months on the lees. These are the bottles that bring lift, texture,
+          and effervescence to any table or occasion.
+        </p>
+        <a class="rf26-card__cta" href="https://www.petitphilippe.com/petit-picks/rosefest-2026/sparkling-spritzy/" target="_top">
+          Shop Sparkling &amp; Spritzy
+          <span class="rf26-card__arrow">&#8594;</span>
+        </a>
+      </div>
+
+
+      <!-- ─────────────────────────────────────────────
+           CARD B: BEACH, LAKE & PATIO
+           Confirmed URL set below
+           ───────────────────────────────────────────── -->
+      <div class="rf26-card">
+
+        <!-- Half-sun above horizon, five rays, gentle wave below -->
+        <svg class="rf26-card__icon" viewBox="0 0 48 48" fill="none"
+             stroke="currentColor" stroke-width="1.3"
+             stroke-linecap="round" stroke-linejoin="round"
+             aria-hidden="true" focusable="false">
+          <path d="M13 30 A11 11 0 0 1 35 30"/>
+          <line x1="6"  y1="30"   x2="42"  y2="30"/>
+          <line x1="24"   y1="18"   x2="24"   y2="14.5"/>
+          <line x1="16"   y1="22"   x2="13.5" y2="19.5"/>
+          <line x1="32"   y1="22"   x2="34.5" y2="19.5"/>
+          <line x1="13"   y1="27"   x2="10.5" y2="25.5"/>
+          <line x1="35"   y1="27"   x2="37.5" y2="25.5"/>
+          <path d="M6 36 Q13 33 20 36 Q27 39 34 36 Q39 34 42 35"/>
+        </svg>
+
+        <h3 class="rf26-card__title">Beach, Lake &amp; Patio</h3>
+        <p class="rf26-card__desc">
+          Chillable, easygoing rosés made for warm afternoons and casual hosting.
+          These are the bottles you reach for without overthinking, for summer
+          weekends that aren't meant to be complicated.
+        </p>
+        <a class="rf26-card__cta" href="https://www.petitphilippe.com/petit-picks/rosefest-2026/beach-lake-patio/" target="_top">
+          Shop Beach, Lake &amp; Patio
+          <span class="rf26-card__arrow">&#8594;</span>
+        </a>
+      </div>
+
+
+      <!-- ─────────────────────────────────────────────
+           CARD C: CRISP & COASTAL
+           LINK-CARD-C: replace # with Lightspeed URL
+           ───────────────────────────────────────────── -->
+      <div class="rf26-card">
+
+        <!-- Three staggered wave lines -->
+        <svg class="rf26-card__icon" viewBox="0 0 48 48" fill="none"
+             stroke="currentColor" stroke-width="1.3"
+             stroke-linecap="round" stroke-linejoin="round"
+             aria-hidden="true" focusable="false">
+          <path d="M5 17 Q11 12 17 17 Q23 22 29 17 Q35 12 43 17"/>
+          <path d="M5 26 Q11 21 17 26 Q23 31 29 26 Q35 21 43 26"/>
+          <path d="M5 35 Q11 30 17 35 Q23 40 29 35 Q35 30 43 35"/>
+        </svg>
+
+        <h3 class="rf26-card__title">Crisp &amp; Coastal</h3>
+        <p class="rf26-card__desc">
+          Saline, mineral, and clean-edged rosés shaped by coast, limestone, or
+          elevation. These drink particularly well alongside seafood and lighter
+          summer meals that benefit from a focused, refreshing pour.
+        </p>
+        <a class="rf26-card__cta" href="https://www.petitphilippe.com/petit-picks/rosefest-2026/crisp-coastal/" target="_top">
+          Shop Crisp &amp; Coastal
+          <span class="rf26-card__arrow">&#8594;</span>
+        </a>
+      </div>
+
+
+      <!-- ─────────────────────────────────────────────
+           CARD D: FOR THE TABLE
+           LINK-CARD-D: replace # with Lightspeed URL
+           ───────────────────────────────────────────── -->
+      <div class="rf26-card">
+
+        <!-- Fork (left) and wine glass (right) -->
+        <svg class="rf26-card__icon" viewBox="0 0 48 48" fill="none"
+             stroke="currentColor" stroke-width="1.3"
+             stroke-linecap="round" stroke-linejoin="round"
+             aria-hidden="true" focusable="false">
+          <line x1="11" y1="8" x2="11" y2="19"/>
+          <line x1="15" y1="8" x2="15" y2="19"/>
+          <line x1="19" y1="8" x2="19" y2="19"/>
+          <path d="M11 19 Q13 22 15 22 Q17 22 19 19"/>
+          <line x1="15" y1="22" x2="15" y2="40"/>
+          <path d="M26 8 C23.5 13 25.5 21 33 23 C40.5 21 42.5 13 40 8"/>
+          <line x1="33" y1="23" x2="33" y2="38"/>
+          <line x1="27" y1="38" x2="39" y2="38"/>
+        </svg>
+
+        <h3 class="rf26-card__title">For the Table</h3>
+        <p class="rf26-card__desc">
+          Structured, savory rosés with enough depth for grilled fish, roast
+          chicken, charcuterie, and summer vegetables. These are dinner rosés,
+          made to be opened at the table, not just on the way to it.
+        </p>
+        <a class="rf26-card__cta" href="https://www.petitphilippe.com/petit-picks/rosefest-2026/for-the-table-pairing/" target="_top">
+          Shop For the Table
+          <span class="rf26-card__arrow">&#8594;</span>
+        </a>
+      </div>
+
+
+      <!-- ─────────────────────────────────────────────
+           CARD E: SERIOUS ROSÉ
+           LINK-CARD-E: replace # with Lightspeed URL
+           ───────────────────────────────────────────── -->
+      <div class="rf26-card">
+
+        <!-- Compass rose: outer ring, 4 arrowhead points, crosshair, center -->
+        <svg class="rf26-card__icon" viewBox="0 0 48 48" fill="none"
+             stroke="currentColor" stroke-width="1.3"
+             stroke-linecap="round" stroke-linejoin="round"
+             aria-hidden="true" focusable="false">
+          <circle cx="24" cy="24" r="15"/>
+          <path d="M21 20 L24 9  L27 20"/>
+          <path d="M21 28 L24 39 L27 28"/>
+          <path d="M28 21 L39 24 L28 27"/>
+          <path d="M20 21 L9  24 L20 27"/>
+          <line x1="24" y1="20" x2="24" y2="28"/>
+          <line x1="20" y1="24" x2="28" y2="24"/>
+          <circle cx="24" cy="24" r="2.5"/>
+        </svg>
+
+        <h3 class="rf26-card__title">Serious Rosé</h3>
+        <p class="rf26-card__desc">
+          Site-specific, textural, and producer-driven bottles that make the
+          case for rosé beyond the season. Age-worthy, food-compatible, and
+          built on terroir rather than occasion. Worth paying attention to.
+        </p>
+        <a class="rf26-card__cta" href="https://www.petitphilippe.com/petit-picks/rosefest-2026/serious-rose/" target="_top">
+          Shop Serious Rosé
+          <span class="rf26-card__arrow">&#8594;</span>
+        </a>
+      </div>
+
+
+      <!-- ─────────────────────────────────────────────
+           CARD F: DISCOVERY BOTTLES
+           LINK-CARD-F: replace # with Lightspeed URL
+           ───────────────────────────────────────────── -->
+      <div class="rf26-card">
+
+        <!-- Constellation: star dots + connecting lines + sparkle -->
+        <svg class="rf26-card__icon" viewBox="0 0 48 48" fill="none"
+             stroke="currentColor" stroke-width="1.3"
+             stroke-linecap="round" stroke-linejoin="round"
+             aria-hidden="true" focusable="false">
+          <line x1="24" y1="12" x2="37" y2="22"/>
+          <line x1="37" y1="22" x2="31" y2="36"/>
+          <line x1="31" y1="36" x2="14" y2="32"/>
+          <line x1="14" y1="32" x2="15" y2="18"/>
+          <line x1="15" y1="18" x2="24" y2="12"/>
+          <line x1="24" y1="12" x2="31" y2="36" stroke-dasharray="2 3"/>
+          <circle cx="24" cy="12" r="2.5" fill="currentColor" stroke="none"/>
+          <circle cx="37" cy="22" r="2"   fill="currentColor" stroke="none"/>
+          <circle cx="31" cy="36" r="2"   fill="currentColor" stroke="none"/>
+          <circle cx="14" cy="32" r="1.5" fill="currentColor" stroke="none"/>
+          <circle cx="15" cy="18" r="1.5" fill="currentColor" stroke="none"/>
+          <line x1="24"   y1="8.5" x2="24"  y2="6.5"/>
+          <line x1="26.7" y1="9.5" x2="28"  y2="8"/>
+          <line x1="21.3" y1="9.5" x2="20"  y2="8"/>
+        </svg>
+
+        <h3 class="rf26-card__title">Discovery Bottles</h3>
+        <p class="rf26-card__desc">
+          Unexpected regions, unusual grapes, and natural-leaning producers.
+          These are the bottles that brought a story to the RoséFest table,
+          and the ones guests asked about most at the end of the night.
+        </p>
+        <a class="rf26-card__cta" href="https://www.petitphilippe.com/petit-picks/rosefest-2026/discovery-bottles/" target="_top">
+          Shop Discovery Bottles
+          <span class="rf26-card__arrow">&#8594;</span>
+        </a>
+      </div>
+
+
+    </div><!-- /.rf26-grid -->
+  </div><!-- /.rf26-inner -->
+
+</section><!-- /#rf26-categories -->
+
+
+<!-- START OPTIONAL LIMITED ALLOCATION CALLOUT -->
+<!-- Remove this entire block (from this comment to END comment) when no longer needed -->
+<div class="rf26-allocation">
+  <div class="rf26-inner">
+    <span class="rf26-label">Availability Note</span>
+    <h2 class="rf26-allocation__title">Limited-Allocation Rosés</h2>
+    <p class="rf26-allocation__body">
+      A few RoséFest bottles came in through smaller allocations and may not be
+      available all season. If you are looking for the harder-to-replace bottles
+      from the lineup, shop sooner rather than later.
+    </p>
+  </div>
+</div>
+<!-- END OPTIONAL LIMITED ALLOCATION CALLOUT -->
+
+
+<span class="rf26-footer-rule"></span>
+
+</div><!-- /.rf26-landing -->
+
+</body>
+</html>
