@@ -363,6 +363,131 @@
 
 
 /* ============================================================
+   5. FULL LINEUP GRID
+   ============================================================ */
+
+.rf26-lineup {
+  border-top: 1px solid var(--c-blush-border);
+}
+
+.rf26-lineup .rf26-inner {
+  padding-top: clamp(3rem, 6vw, 5rem);
+  padding-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+.rf26-lineup__header {
+  text-align: center;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.rf26-lineup__header h2 {
+  font-family: var(--f-serif);
+  font-size: clamp(1.375rem, 3vw, 1.875rem);
+  font-weight: normal;
+  color: var(--c-text);
+}
+
+.rf26-lineup__sub {
+  font-size: 0.84375rem;
+  color: var(--c-mid);
+  line-height: 1.6;
+}
+
+/* 4-col desktop, 2-col mobile */
+.rf26-bottles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--c-blush-border);
+  border: 1px solid var(--c-blush-border);
+}
+
+@media (min-width: 600px)  { .rf26-bottles { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 900px)  { .rf26-bottles { grid-template-columns: repeat(4, 1fr); } }
+
+/* Entire card is a link */
+.rf26-bottle {
+  background: var(--c-blush-petal);
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.rf26-bottle:hover { background: var(--c-blush-card-hover); }
+
+/* Image container — tall portrait; shows blush bg if no image yet */
+.rf26-bottle__img {
+  width: 100%;
+  aspect-ratio: 3 / 7;
+  background: var(--c-cream);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rf26-bottle__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  padding: 1rem 1.25rem;
+}
+
+.rf26-bottle__info {
+  padding: 0.875rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+}
+
+.rf26-bottle__region {
+  font-family: var(--f-sans);
+  font-size: 0.5625rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--c-sage);
+}
+
+.rf26-bottle__name {
+  font-family: var(--f-serif);
+  font-size: 0.875rem;
+  font-weight: normal;
+  color: var(--c-text);
+  line-height: 1.3;
+}
+
+.rf26-bottle__price {
+  font-family: var(--f-sans);
+  font-size: 0.8125rem;
+  color: var(--c-text);
+  font-weight: 600;
+  margin-top: 0.125rem;
+}
+
+.rf26-bottle__cta {
+  display: inline-block;
+  font-family: var(--f-sans);
+  font-size: 0.5625rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--c-coral);
+  margin-top: 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.rf26-bottle:hover .rf26-bottle__cta { color: var(--c-rose-deep); }
+
+/* ============================================================
    FOOTER ACCENT BAR
    ============================================================ */
 
@@ -645,7 +770,203 @@
 <!-- END OPTIONAL LIMITED ALLOCATION CALLOUT -->
 
 
-<span class="rf26-footer-rule"></span>
+<!-- ══════════════════════════════════════════════
+     SECTION 3: FULL LINEUP GRID
+     Images and PDP links pull from Lightspeed CDN.
+     Lost Boy and Clos Cibonne not yet on site — marked with TODO.
+     ══════════════════════════════════════════════ -->
+<section class="rf26-lineup">
+  <div class="rf26-inner">
+
+    <div class="rf26-lineup__header">
+      <span class="rf26-label">Shop by Bottle</span>
+      <h2>The Full RoséFest 2026 Lineup</h2>
+      <p class="rf26-lineup__sub">Every wine from the event, linked directly to the bottle.</p>
+    </div>
+
+    <div class="rf26-bottles">
+
+      <!-- 1 ─ Lost Boy Pet-Nat -->
+      <a class="rf26-bottle" href="https://www.petitphilippe.com/lost-boy-ancestrale-syrah-pet-nat.html" target="_top">
+        <div class="rf26-bottle__img"><img src="https://cdn.shoplightspeed.com/shops/640383/files/70050395/500x700x1/lost-boy-lost-boy-pet-nat-brut-syrah-rose-2025.jpg" alt="Lost Boy Pét Nat Brut Syrah Rosé 2025"></div>
+        <div class="rf26-bottle__info">
+          <span class="rf26-bottle__region">Cape Agulhas · South Africa</span>
+          <p class="rf26-bottle__name">Lost Boy Pét Nat Brut Syrah Rosé 2025</p>
+          <span class="rf26-bottle__price">$31</span>
+          <span class="rf26-bottle__cta">View Bottle →</span>
+        </div>
+      </a>
+
+      <!-- 2 ─ De Kleine Wijn Koöp -->
+      <a class="rf26-bottle" href="https://www.petitphilippe.com/de-kleine-wijn-koop-gsm-south-africa-rose.html" target="_top">
+        <div class="rf26-bottle__img"><img src="https://cdn.shoplightspeed.com/shops/640383/files/75856645/500x700x1/de-kleine-wijn-kooep-de-kleine-wijn-kooep-gsm-rose.jpg" alt="De Kleine Wijn Koöp GSM Rosé 2025"></div>
+        <div class="rf26-bottle__info">
+          <span class="rf26-bottle__region">Cape Tulbagh · South Africa</span>
+          <p class="rf26-bottle__name">De Kleine Wijn Koöp GSM Rosé 2025</p>
+          <span class="rf26-bottle__price">$30</span>
+          <span class="rf26-bottle__cta">View Bottle →</span>
+        </div>
+      </a>
+
+      <!-- 3 ─ Pierre Sparr -->
+      <a class="rf26-bottle" href="https://www.petitphilippe.com/pierre-sparr-cremant-dalsace-brut-rose-nv.html" target="_top">
+        <div class="rf26-bottle__img"><img src="https://cdn.shoplightspeed.com/shops/640383/files/75856814/500x700x1/pierre-sparr-cremant-dalsace-brut-rose-nv.jpg" alt="Pierre Sparr Crémant d'Alsace Brut Rosé NV"></div>
+        <div class="rf26-bottle__info">
+          <span class="rf26-bottle__region">Alsace · France</span>
+          <p class="rf26-bottle__name">Pierre Sparr Crémant d'Alsace Brut Rosé NV</p>
+          <span class="rf26-bottle__price">$33</span>
+          <span class="rf26-bottle__cta">View Bottle →</span>
+        </div>
+      </a>
+
+      <!-- 4 ─ Roseblood d'Estoublon -->
+      <a class="rf26-bottle" href="https://www.petitphilippe.com/chateau-destoublon-roseblood-rose-provence.html" target="_top">
+        <div class="rf26-bottle__img"><img src="https://cdn.shoplightspeed.com/shops/640383/files/65315058/500x700x1/chateau-destoublon-chateau-destoublon-roseblood-pr.jpg" alt="Château d'Estoublon 'Roseblood' Provence Rosé 2025"></div>
+        <div class="rf26-bottle__info">
+          <span class="rf26-bottle__region">Coteaux Varois · France</span>
+          <p class="rf26-bottle__name">Roseblood d'Estoublon Provence Rosé 2025</p>
+          <span class="rf26-bottle__price">$28</span>
+          <span class="rf26-bottle__cta">View Bottle →</span>
+        </div>
+      </a>
+
+      <!-- 5 ─ Domaine Ott Romassan -->
+      <a class="rf26-bottle" href="https://www.petitphilippe.com/domaine-ott-romassan-bandol-rose.html" target="_top">
+        <div class="rf26-bottle__img"><img src="https://cdn.shoplightspeed.com/shops/640383/files/75856777/500x700x1/domaines-ott-domaine-ott-romassan-bandol-rose-2024.jpg" alt="Domaine Ott 'Romassan' Bandol Rosé 2024"></div>
+        <div class="rf26-bottle__info">
+          <span class="rf26-bottle__region">Bandol · France</span>
+          <p class="rf26-bottle__name">Domaine Ott 'Romassan' Bandol Rosé 2024</p>
+          <span class="rf26-bottle__price">$84</span>
+          <span class="rf26-bottle__cta">View Bottle →</span>
+        </div>
+      </a>
+
+      <!-- 6 ─ Clos Cibonne -->
+      <a class="rf26-bottle" href="https://www.petitphilippe.com/clos-cibonne-cuvee-tradition-tibouren-rose-provenc.html" target="_top">
+        <div class="rf26-bottle__img"><img src="https://cdn.shoplightspeed.com/shops/640383/files/75856627/500x700x1/clos-cibonne-cuvee-tradition-tibouren-rose-2024.jpg" alt="Clos Cibonne Cuvée Tradition Tibouren Rosé 2024"></div>
+        <div class="rf26-bottle__info">
+          <span class="rf26-bottle__region">Provence · France</span>
+          <p class="rf26-bottle__name">Clos Cibonne Cuvée Tradition 2024</p>
+          <span class="rf26-bottle__price">$59</span>
+          <span class="rf26-bottle__cta">View Bottle →</span>
+        </div>
+      </a>
+
+      <!-- 7 ─ Txomin Etxaniz -->
+      <a class="rf26-bottle" href="https://www.petitphilippe.com/txomin-etxaniz-getariako-txakolina-rose.html" target="_top">
+        <div class="rf26-bottle__img"><img src="https://cdn.shoplightspeed.com/shops/640383/files/75856839/500x700x1/txomin-etxaniz-txomin-etxaniz-getariako-txakolina.jpg" alt="Txomin Etxaniz Getariako Txakolina Rosé 2025"></div>
+        <div class="rf26-bottle__info">
+          <span class="rf26-bottle__region">Basque Country · Spain</span>
+          <p class="rf26-bottle__name">Txomin Etxaniz Txakolina Rosé 2025</p>
+          <span class="rf26-bottle__price">$30</span>
+          <span class="rf26-bottle__cta">View Bottle →</span>
+        </div>
+      </a>
+
+      <!-- 8 ─ Tiberio Cerasuolo -->
+      <a class="rf26-bottle" href="https://www.petitphilippe.com/tiberio-cerasuolo-d-abruzzo-dop-italy-rose-rosato.html" target="_top">
+        <div class="rf26-bottle__img"><img src="https://cdn.shoplightspeed.com/shops/640383/files/75856832/500x700x1/tiberio-cerasuolo-dabruzzo-dop-rosato-italy-2025.jpg" alt="Tiberio Cerasuolo d'Abruzzo DOP 2025"></div>
+        <div class="rf26-bottle__info">
+          <span class="rf26-bottle__region">Abruzzo · Italy</span>
+          <p class="rf26-bottle__name">Tiberio Cerasuolo d'Abruzzo DOP 2025</p>
+          <span class="rf26-bottle__price">$39</span>
+          <span class="rf26-bottle__cta">View Bottle →</span>
+        </div>
+      </a>
+
+      <!-- 9 ─ Lucien Crochet -->
+      <a class="rf26-bottle" href="https://www.petitphilippe.com/domaine-lucien-crochet-sancerre-pinot-noir-rose.html" target="_top">
+        <div class="rf26-bottle__img"><img src="https://cdn.shoplightspeed.com/shops/640383/files/75856726/500x700x1/domaine-lucien-crochet-domaine-lucien-crochet-sanc.jpg" alt="Domaine Lucien Crochet Sancerre Rosé 2025"></div>
+        <div class="rf26-bottle__info">
+          <span class="rf26-bottle__region">Sancerre · France</span>
+          <p class="rf26-bottle__name">Lucien Crochet Sancerre Rosé 2025</p>
+          <span class="rf26-bottle__price">$52</span>
+          <span class="rf26-bottle__cta">View Bottle →</span>
+        </div>
+      </a>
+
+      <!-- 10 ─ COS Rosa di Lupo -->
+      <a class="rf26-bottle" href="https://www.petitphilippe.com/cos-rosato-di-lupo-terre-siciliane-rosato.html" target="_top">
+        <div class="rf26-bottle__img"><img src="https://cdn.shoplightspeed.com/shops/640383/files/75856625/500x700x1/cos-rosato-di-lupo-terre-siciliane-rosato-2025.jpg" alt="COS Rosato di Lupo Terre Siciliane Rosato 2025"></div>
+        <div class="rf26-bottle__info">
+          <span class="rf26-bottle__region">Sicily · Italy</span>
+          <p class="rf26-bottle__name">COS Rosato di Lupo Terre Siciliane 2025</p>
+          <span class="rf26-bottle__price">$35</span>
+          <span class="rf26-bottle__cta">View Bottle →</span>
+        </div>
+      </a>
+
+      <!-- 11 ─ Montenidoli -->
+      <a class="rf26-bottle" href="https://www.petitphilippe.com/montenidoli-il-canaiuolo-toscana-rosato.html" target="_top">
+        <div class="rf26-bottle__img"><img src="https://cdn.shoplightspeed.com/shops/640383/files/75856800/500x700x1/montenidoli-il-canaiuolo-toscana-rosato-2025.jpg" alt="Montenidoli Il Canaiuolo Toscana Rosato 2025"></div>
+        <div class="rf26-bottle__info">
+          <span class="rf26-bottle__region">Tuscany · Italy</span>
+          <p class="rf26-bottle__name">Montenidoli 'Il Canaiuolo' Toscana Rosato 2025</p>
+          <span class="rf26-bottle__price">$30</span>
+          <span class="rf26-bottle__cta">View Bottle →</span>
+        </div>
+      </a>
+
+      <!-- 12 ─ Müller-Ruprecht -->
+      <a class="rf26-bottle" href="https://www.petitphilippe.com/muller-ruprecht-pinot-noir-rose-pfalz-germany.html" target="_top">
+        <div class="rf26-bottle__img"><img src="https://cdn.shoplightspeed.com/shops/640383/files/75856803/500x700x1/muller-ruprecht-mueller-ruprecht-pinot-noir-rose-p.jpg" alt="Müller-Ruprecht Pinot Noir Rosé Pfalz 2025"></div>
+        <div class="rf26-bottle__info">
+          <span class="rf26-bottle__region">Pfalz · Germany</span>
+          <p class="rf26-bottle__name">Müller-Ruprecht Pinot Noir Rosé Pfalz 2025</p>
+          <span class="rf26-bottle__price">$33</span>
+          <span class="rf26-bottle__cta">View Bottle →</span>
+        </div>
+      </a>
+
+      <!-- 13 ─ Teutonic -->
+      <a class="rf26-bottle" href="https://www.petitphilippe.com/teutonic-wine-company-pinot-noir-willamette-rose.html" target="_top">
+        <div class="rf26-bottle__img"><img src="https://cdn.shoplightspeed.com/shops/640383/files/75856829/500x700x1/teutonic-wine-company-teutonic-wine-company-pinot.jpg" alt="Teutonic Wine Company Pinot Noir Rosé 2025"></div>
+        <div class="rf26-bottle__info">
+          <span class="rf26-bottle__region">Willamette Valley · Oregon</span>
+          <p class="rf26-bottle__name">Teutonic Wine Company Pinot Noir Rosé 2025</p>
+          <span class="rf26-bottle__price">$33</span>
+          <span class="rf26-bottle__cta">View Bottle →</span>
+        </div>
+      </a>
+
+      <!-- 14 ─ Scribe -->
+      <a class="rf26-bottle" href="https://www.petitphilippe.com/scribe-winery-estate-rose-of-pinot-noir.html" target="_top">
+        <div class="rf26-bottle__img"><img src="https://cdn.shoplightspeed.com/shops/640383/files/75856819/500x700x1/scribe-winery-estate-rose-of-pinot-noir-2025.jpg" alt="Scribe Winery Estate Rosé of Pinot Noir 2025"></div>
+        <div class="rf26-bottle__info">
+          <span class="rf26-bottle__region">Carneros · California</span>
+          <p class="rf26-bottle__name">Scribe Winery Estate Rosé of Pinot Noir 2025</p>
+          <span class="rf26-bottle__price">$46</span>
+          <span class="rf26-bottle__cta">View Bottle →</span>
+        </div>
+      </a>
+
+      <!-- 15 ─ Charles Audoin -->
+      <a class="rf26-bottle" href="https://www.petitphilippe.com/domaine-charles-audoin-marsannay-rose.html" target="_top">
+        <div class="rf26-bottle__img"><img src="https://cdn.shoplightspeed.com/shops/640383/files/75856673/500x700x1/domaine-charles-audoin-marsannay-rose-2023.jpg" alt="Domaine Charles Audoin Marsannay Rosé 2023"></div>
+        <div class="rf26-bottle__info">
+          <span class="rf26-bottle__region">Marsannay · Burgundy</span>
+          <p class="rf26-bottle__name">Charles Audoin Marsannay Rosé 2023</p>
+          <span class="rf26-bottle__price">$53</span>
+          <span class="rf26-bottle__cta">View Bottle →</span>
+        </div>
+      </a>
+
+      <!-- 16 ─ Ampeleia -->
+      <a class="rf26-bottle" href="https://www.petitphilippe.com/ampeleia-rosato-di-ampeleia-igt-toscana-rose.html" target="_top">
+        <div class="rf26-bottle__img"><img src="https://cdn.shoplightspeed.com/shops/640383/files/75856546/500x700x1/ampeleia-ampeleia-rosato-di-ampeleia-igt-toscana-r.jpg" alt="Ampeleia Rosato di Ampeleia IGT Toscana Rosé 2023"></div>
+        <div class="rf26-bottle__info">
+          <span class="rf26-bottle__region">Maremma · Italy</span>
+          <p class="rf26-bottle__name">Ampeleia 'Rosato di Ampeleia' IGT Toscana 2023</p>
+          <span class="rf26-bottle__price">$37</span>
+          <span class="rf26-bottle__cta">View Bottle →</span>
+        </div>
+      </a>
+
+    </div><!-- /.rf26-bottles -->
+  </div><!-- /.rf26-inner -->
+</section>
+
+
 
 </div><!-- /.rf26-landing -->
 
