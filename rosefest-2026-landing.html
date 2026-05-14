@@ -429,6 +429,35 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;   /* needed for badge positioning */
+}
+
+/* ── Allocation / urgency badge overlaid on bottle image ── */
+.rf26-badge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0.5rem 0.75rem;
+  font-family: var(--f-sans);
+  font-size: 0.5rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-align: center;
+  pointer-events: none;
+}
+
+/* Limited-Allocation: dark charcoal strip with gold text — understated */
+.rf26-badge--alloc {
+  background: rgba(46, 43, 40, 0.84);
+  color: var(--c-gold);
+}
+
+/* Only 2 Bottles Left: deep rosé — more urgent but still restrained */
+.rf26-badge--urgent {
+  background: var(--c-rose-deep);
+  color: var(--c-ivory);
 }
 
 .rf26-bottle__img img {
@@ -832,7 +861,7 @@
 
       <!-- 5 ─ Domaine Ott Romassan -->
       <a class="rf26-bottle" href="https://www.petitphilippe.com/domaine-ott-romassan-bandol-rose.html" target="_top">
-        <div class="rf26-bottle__img"><img src="https://cdn.shoplightspeed.com/shops/640383/files/75856777/500x700x1/domaines-ott-domaine-ott-romassan-bandol-rose-2024.jpg" alt="Domaine Ott 'Romassan' Bandol Rosé 2024"></div>
+        <div class="rf26-bottle__img"><img src="https://cdn.shoplightspeed.com/shops/640383/files/75856777/500x700x1/domaines-ott-domaine-ott-romassan-bandol-rose-2024.jpg" alt="Domaine Ott 'Romassan' Bandol Rosé 2024"><span class="rf26-badge rf26-badge--alloc">Limited-Allocation</span></div>
         <div class="rf26-bottle__info">
           <span class="rf26-bottle__region">Bandol · France</span>
           <p class="rf26-bottle__name">Domaine Ott 'Romassan' Bandol Rosé 2024</p>
@@ -876,7 +905,7 @@
 
       <!-- 9 ─ Lucien Crochet -->
       <a class="rf26-bottle" href="https://www.petitphilippe.com/domaine-lucien-crochet-sancerre-pinot-noir-rose.html" target="_top">
-        <div class="rf26-bottle__img"><img src="https://cdn.shoplightspeed.com/shops/640383/files/75856726/500x700x1/domaine-lucien-crochet-domaine-lucien-crochet-sanc.jpg" alt="Domaine Lucien Crochet Sancerre Rosé 2025"></div>
+        <div class="rf26-bottle__img"><img src="https://cdn.shoplightspeed.com/shops/640383/files/75856726/500x700x1/domaine-lucien-crochet-domaine-lucien-crochet-sanc.jpg" alt="Domaine Lucien Crochet Sancerre Rosé 2025"><span class="rf26-badge rf26-badge--alloc">Limited-Allocation</span></div>
         <div class="rf26-bottle__info">
           <span class="rf26-bottle__region">Sancerre · France</span>
           <p class="rf26-bottle__name">Lucien Crochet Sancerre Rosé 2025</p>
@@ -909,7 +938,7 @@
 
       <!-- 12 ─ Müller-Ruprecht -->
       <a class="rf26-bottle" href="https://www.petitphilippe.com/muller-ruprecht-pinot-noir-rose-pfalz-germany.html" target="_top">
-        <div class="rf26-bottle__img"><img src="https://cdn.shoplightspeed.com/shops/640383/files/75856803/500x700x1/muller-ruprecht-mueller-ruprecht-pinot-noir-rose-p.jpg" alt="Müller-Ruprecht Pinot Noir Rosé Pfalz 2025"></div>
+        <div class="rf26-bottle__img"><img src="https://cdn.shoplightspeed.com/shops/640383/files/75856803/500x700x1/muller-ruprecht-mueller-ruprecht-pinot-noir-rose-p.jpg" alt="Müller-Ruprecht Pinot Noir Rosé Pfalz 2025"><span class="rf26-badge rf26-badge--urgent">Only 2 Bottles Left</span></div>
         <div class="rf26-bottle__info">
           <span class="rf26-bottle__region">Pfalz · Germany</span>
           <p class="rf26-bottle__name">Müller-Ruprecht Pinot Noir Rosé Pfalz 2025</p>
@@ -953,7 +982,7 @@
 
       <!-- 16 ─ Ampeleia -->
       <a class="rf26-bottle" href="https://www.petitphilippe.com/ampeleia-rosato-di-ampeleia-igt-toscana-rose.html" target="_top">
-        <div class="rf26-bottle__img"><img src="https://cdn.shoplightspeed.com/shops/640383/files/75856546/500x700x1/ampeleia-ampeleia-rosato-di-ampeleia-igt-toscana-r.jpg" alt="Ampeleia Rosato di Ampeleia IGT Toscana Rosé 2023"></div>
+        <div class="rf26-bottle__img"><img src="https://cdn.shoplightspeed.com/shops/640383/files/75856546/500x700x1/ampeleia-ampeleia-rosato-di-ampeleia-igt-toscana-r.jpg" alt="Ampeleia Rosato di Ampeleia IGT Toscana Rosé 2023"><span class="rf26-badge rf26-badge--alloc">Limited-Allocation</span></div>
         <div class="rf26-bottle__info">
           <span class="rf26-bottle__region">Maremma · Italy</span>
           <p class="rf26-bottle__name">Ampeleia 'Rosato di Ampeleia' IGT Toscana 2023</p>
